@@ -2,7 +2,7 @@
 
 ## Polygon
 
-Deployed Link : 
+Deployed Link 
 <br>
 Targeted Category: Best Public Good
 <br>
@@ -23,4 +23,16 @@ Solution :As a proof of record user can live share the crime incident while repo
 Targeted Category: Push Notification Implementation
 <br>
 Solution :Every time when a citizen reports a complain ,police will be notified using Push Notification that someone reported a crime recently ,which will help citizens in getting help faster from the Police Body
+
+Clone Instructions
+1. npm i
+1. npm i truffle -g
+1. cd src/truffle-contract
+1. truffle develop
+1. compile
+1. migrate
+1. cd ../..
+1. npm start
+
+Video Demo Link
 
