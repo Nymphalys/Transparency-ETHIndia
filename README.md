@@ -2,7 +2,7 @@
 
 ## Polygon
 
-Deployed Link : Contract Address - 0x05d34858905b9A204D5570f3DE7575D58A72995b
+Deployed Contract Link
 <br>
 Targeted Category: Best Public Good
 <br>
