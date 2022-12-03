@@ -35,4 +35,6 @@ Clone Instructions
 1. npm start
 
 Video Demo Link
+<br>
+Canva Presentation Link
 
