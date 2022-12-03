@@ -24,7 +24,7 @@ Targeted Category: Push Notification Implementation
 <br>
 Solution :Every time when a citizen reports a complain ,police will be notified using Push Notification that someone reported a crime recently ,which will help citizens in getting help faster from the Police Body
 
-Clone Instructions
+### Clone Instructions
 1. npm i
 1. npm i truffle -g
 1. cd src/truffle-contract
@@ -34,6 +34,7 @@ Clone Instructions
 1. cd ../..
 1. npm start
 
+### Links
 Video Demo Link
 <br>
 Canva Presentation Link
