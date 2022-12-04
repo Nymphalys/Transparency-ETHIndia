@@ -2,7 +2,7 @@
 
 ## Polygon
 
-Deployed Contract Link
+Deployed Contract Link:
 <br>
 Targeted Category: Best Public Good
 <br>
@@ -35,9 +35,9 @@ Solution :Every time when a citizen reports a complain ,police will be notified 
 1. npm start
 
 ### Links
-Video Demo Link
-<br>
-Canva Presentation Link
-<br>
-Deployed product Link
+
+
+Canva Presentation Link : https://www.canva.com/design/DAFTiQFSe2k/gcUilNy2v8nn_qfLBkA49g/view?utm_content=DAFTiQFSe2k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+
 
