@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dashboard</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  	<link rel="stylesheet" href="./css/main.css">
+  	<link rel="stylesheet" href="./css/util.css">
+  	<link rel="stylesheet" href="./css/dashboard.css">
+
+    <script src="https://www.thomasfrank.se/sessvars.js"></script>
+    <style>
+    .profile-pic{
+    	max-height: 300px;
+    	max-width: 300px;
+    }
+    i{
+    	cursor: pointer;
+    }
+	</style>
+
+
+</head>
+<body>
+
+
+  <!-- Modal Structure -->
+  <div id="complaint-filing" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Register your complaint</h4>
+        <div class="row">
+		    <form class="col s12">
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <textarea id="textarea1" class="materialize-textarea"></textarea>
+		          <label for="textarea1">Textarea</label>
+		        </div>
+		        <div class="input-field col s12">
+		          <input id="email" type="email" class="validate">
+		          <label for="email" data-error="wrong" data-success="right">Email</label>
+		        </div>		        
+		      </div>
+		    </form>
+		</div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+  </div>
+        
+	<nav>
+		<div class="nav-wrapper p-l-20 p-r-20">
+		  <a href="#!" class="brand-logo">The Reporter</a>
+		  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		  <ul class="right hide-on-med-and-down">
+		    <li><a class="waves-effect waves-light fs-22 modal-trigger" href="#complaint-filing">File a complaint</a></li>
+		    <li><a class="waves-effect waves-light fs-22">Your complaints</a></li>
+		    <li><a href="collapsible.html" class="waves-effect waves-light fs-22">Javascript</a></li>
+		  </ul>
+		  <ul class="side-nav" id="mobile-demo">
+		    <li class="p-t-20"><a class="waves-effect waves-light fs-22">File a complaint</a></li>
+		    <li class="p-t-20"><a class="waves-effect waves-light fs-22">Your complaints</a></li>
+		  </ul>
+		</div>
+	</nav>
+	<div class="limiter">
+		<div class="container">
+			<div class="row">
+				<div class="col l3 m5 s12">
+					<img src="https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg" class="img-responsive profile-pic">
+					<ul class="collection">
+				      <li class="collection-item fs-22">Total Cases : <b>40</b><i class="material-icons right all_cases">send</i></li>
+				      <li class="collection-item fs-22">Cases Pending : <b>20</b><i class="material-icons right pending_cases">send</i></li>
+				      <li class="collection-item fs-22">Cases Closed : <b>10</b><i class="material-icons right closed_cases">send</i></li>
+				      <li class="collection-item"></li>
+				    </ul>
+				</div>
+				<div class="col l9 col m7 col s12">
+					<div class="container-title text-center">
+						<h4> Complaints Under You</h4>
+					</div>
+					<div class="complaints">
+						<div class="col m-t-20 pending">
+							<div class="card horizontal">
+							  <div class="card-stacked">
+							    <div class="card-content fs-20">
+							      <p class="complaint-title fs-24">
+							      	<span class=="title">Complaint title</span> 
+							      	<span class="badge right red">Query</span>
+							      	<span class="badge right green">Lost</span>
+							      	<span class="badge right orange">Pending</span>
+							      </p>
+							      <div>Complaint description.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus fermentum mi at pharetra. Aliquam tristique eros faucibus finibus facilisis.
+							      </div>
+							      <div class="complaint-btns m-t-20">
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10">
+								      	<span class="badge">1200</span>
+								      	<i class="material-icons text-white">thumb_up</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10" disabled>
+								      	<span class="badge">100</span>
+								      	<i class="material-icons text-white ">thumb_down</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat blue m-r-10 m-t-10 text-white" >
+								      	Solve this problem.
+								      </a>						      
+								  </div>					      
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col m-t-20 closed">
+							<div class="card horizontal">
+							  <div class="card-stacked">
+							    <div class="card-content fs-20">
+							      <p class="complaint-title fs-24">
+							      	<span class=="title">Complaint title</span> 
+							      	<span class="badge right red">Query</span>
+							      	<span class="badge right green">Lost</span>
+							      	<span class="badge right orange">Closed</span>
+							      </p>
+							      <div>Complaint description.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus fermentum mi at pharetra. Aliquam tristique eros faucibus finibus facilisis.
+							      </div>
+							      <div class="complaint-btns m-t-20">
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10">
+								      	<span class="badge">1200</span>
+								      	<i class="material-icons text-white">thumb_up</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10" disabled>
+								      	<span class="badge">100</span>
+								      	<i class="material-icons text-white ">thumb_down</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat blue m-r-10 m-t-10 text-white" >
+								      	Solve this problem.
+								      </a>						      
+								  </div>					      
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	<script>
+  		$(".button-collapse").sideNav();
+  		$('.modal').modal();
+  		$('#textarea1').trigger('autoresize');
+  		$('.all_cases').click(function(){
+  			$('.pending').show();
+  			$('.closed').show();
+  			$('.accepted').show();
+  		});
+  		$('.pending_cases').click(function(){
+  			$('.closed').hide();
+  			$('.pending').show();
+  		})
+  		$('.closed_cases').click(function(){
+  			$('.closed').show();
+  			$('.pending').hide();
+  		})
+  	</script>
+  	 <script src="app.js"></script>
+  	 <script type="text/javascript">
+  	 console.log(sessvars.userProfile );
+  	 </script>
+	<!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>

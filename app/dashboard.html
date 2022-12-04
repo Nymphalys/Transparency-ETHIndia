@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<title>Dashboard</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  	<link rel="stylesheet" href="./css/main.css">
+  	<link rel="stylesheet" href="./css/util.css">
+  	<link rel="stylesheet" href="./css/dashboard.css">
+
+    <script src="https://www.thomasfrank.se/sessvars.js"></script>
+        <script src="https://wzrd.in/standalone/buffer"></script>
+    <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js"
+    integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
+    crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+
+  <!-- Modal Structure -->
+  <div id="complaint-filing" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Register your complaint</h4>
+        <div class="row">
+		    <form class="col s12" onsubmit="registerComplaint();return false;">
+		      	<div class="row">
+			        <div class="input-field col s12">
+			          <textarea id="complaint" class="materialize-textarea"></textarea>
+			          <label for="textarea1">Complaint Description</label>
+			        </div>
+			        <div class="input-field col s12">
+			          <input id="contact_info" type="text" class="validate">
+			          <label for="email" data-error="wrong" data-success="right">Phone no.</label>
+			        </div>	
+			        <label for="crime-date">Date of Crime</label>
+			        <input id="crime_date" type="text" class="datepicker">
+	    			<div class="input-field col s12">
+		    			<select id="type_of_complaint">
+		      				<option value="" disabled selected>Type of Complaint</option>
+						    <option value="1">Criminal</option>
+						    <option value="2">Legal</option>
+						    <option value="3">Rape / Harrasment </option>
+						</select>
+					</div>
+	    			<label>Complaint Visibility</label>
+	    			<div class="switch">
+					    <label>
+					      Off
+					      <input type="checkbox" id="complaint_visibility">
+					      <span class="lever"></span>
+					      On
+					    </label>
+					</div>
+		    		<div class="file-field input-field">
+		      			<div class="btn">
+			        		<span>Upload Evidence</span>
+			        		<input type="file" id="documents" name="documents">
+		      			</div>
+		     			<div class="file-path-wrapper">
+		        			<input class="file-path validate" type="text" id="documents">
+		      			</div>
+		    		</div>		        
+				</div>
+
+				<div>
+					<button class="btn" onclick="getLocation()">Auto detect location</button>
+				</div>
+    			<label for="crime-time">Time of Crime</label>
+    		 	<input type="text" class="timepicker" id="time_of_crime">
+    		 	<input type="submit" class="btn">
+			</form>
+		</div>	
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+  </div>
+        
+	<nav>
+		<div class="nav-wrapper p-l-20 p-r-20">
+		  <a href="#!" class="brand-logo">The Reporter</a>
+		  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		  <ul class="right hide-on-med-and-down">
+		    <li><a class="waves-effect waves-light fs-22 modal-trigger" href="#complaint-filing">File a complaint</a></li>
+		    <li><a class="waves-effect waves-light fs-22">Your complaints</a></li>
+		    <li><a href="collapsible.html" class="waves-effect waves-light fs-22">Javascript</a></li>
+		  </ul>
+		  <ul class="side-nav" id="mobile-demo">
+		    <li class="p-t-20"><a class="waves-effect waves-light fs-22">File a complaint</a></li>
+		    <li class="p-t-20"><a class="waves-effect waves-light fs-22">Your complaints</a></li>
+		  </ul>
+		</div>
+	</nav>
+	<div class="limiter">
+		<div class="container">
+			<div class="row">
+				<div class="col l3 col m5 col s12 ">
+					<div class="container-title text-center">
+						<h4> Top Performers </h4>
+					</div>
+					<ul class="collection top_performers with-header m-t-20">
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+					</ul>
+				</div>
+				<div class="col l9 col m7 col s12">
+					<div class="container-title text-center">
+						<h4> Complaints </h4>
+					</div>
+					<div class="complaints">
+						<div class="col m-t-20">
+							<div class="card horizontal">
+
+							  <div class="card-stacked">
+							    <div class="card-content fs-20">
+							      <p class="complaint-title fs-24">
+							      	<span class=="title">Complaint title</span> 
+							      	<span class="badge right red">Query</span>
+							      	<span class="badge right green">Lost</span>
+							      	<span class="badge right orange">Not resolved</span>
+							      </p>
+							      <div>Complaint description.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus fermentum mi at pharetra. Aliquam tristique eros faucibus finibus facilisis.
+							      </div>
+							      <div class="complaint-btns m-t-20">
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10">
+								      	<span class="badge">1200</span>
+								      	<i class="material-icons text-white">thumb_up</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10" disabled>
+								      	<span class="badge">100</span>
+								      	<i class="material-icons text-white ">thumb_down</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat blue m-r-10 m-t-10 text-white" >
+								      	Solve this problem.
+								      </a>						      
+								  </div>					      
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col m-t-20">
+							<div class="card horizontal">
+
+							  <div class="card-stacked">
+							    <div class="card-content fs-20">
+							      <p class="complaint-title fs-24">
+							      	<span class=="title">Complaint title</span> 
+							      	<span class="badge right red">Query</span>
+							      	<span class="badge right green">Lost</span>
+							      	<span class="badge right orange">Not resolved</span>
+							      </p>
+							      <div>Complaint description.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus fermentum mi at pharetra. Aliquam tristique eros faucibus finibus facilisis.
+							      </div>
+							      <div class="complaint-btns m-t-20">
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10">
+								      	<span class="badge">1200</span>
+								      	<i class="material-icons text-white">thumb_up</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat red m-r-10 m-t-10" disabled>
+								      	<span class="badge">100</span>
+								      	<i class="material-icons text-white ">thumb_down</i>
+								      </a>
+								      <a class="waves-effect waves-teal btn-flat blue m-r-10 m-t-10 text-white" >
+								      	Solve this problem.
+								      </a>						      
+								  </div>					      
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+	<script>
+
+
+	function getLocation() {
+	    if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(showPosition);
+	    } else { 
+	        console.log("Geolocation is not supported by this browser.");
+	    }
+	}
+
+function showPosition(position) {
+    console.log(position.coords.latitude);
+
+}
+</script>
+
+
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	<script>
+  		$(document).ready(function() {
+    		$('select').material_select();
+  		});
+  		$(".button-collapse").sideNav();
+  		$('.modal').modal();
+  		$('#textarea1').trigger('autoresize');
+  		$('.datepicker').pickadate({
+    		selectMonths: true, // Creates a dropdown to control month
+		    selectYears: 15, // Creates a dropdown of 15 years to control year,
+		    today: 'Today',
+		    clear: 'Clear',
+		    close: 'Ok',
+		    closeOnSelect: false // Close upon selecting a date,
+  		});
+  		$('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
+  });
+  	</script>
+  	 
+  	 <script type="text/javascript">
+  	 console.log(sessvars.userProfile );
+  	 </script>
+
+
+<script src="app.js"></script>
+
+	<!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>

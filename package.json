@@ -1,0 +1,35 @@
+{
+  "name": "transparency-ethindia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nymphalys/Transparency-ETHIndia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nymphalys/Transparency-ETHIndia/issues"
+  },
+  "homepage": "https://github.com/Nymphalys/Transparency-ETHIndia#readme",
+  "devDependencies": {
+    "hardhat": "^2.12.3"
+  },
+  "dependencies": {
+    "@ethersproject/abi": "^5.4.7",
+    "@ethersproject/providers": "^5.4.7",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.1",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "chai": "^4.2.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "hardhat-gas-reporter": "^1.0.8"
+  }
+}
